@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Auth {
 
-	private String line;
+	private String line ;
 
 	public void optionver(int optiontype) {
 		Scanner inputScanner = new Scanner(System.in);
@@ -35,16 +35,19 @@ public class Auth {
 
 					// datastore = Arrays.asList(lines);
 					datastore.addAll(Arrays.asList(line.split("\\s*,\\s*")));
-					// System.out.println(datastore);
-					// System.out.println(line);
+					 System.out.println(datastore.get(1));
+					System.out.println(line);
 				
 
 			
 				
 			}
 			boolean uname = datastore.contains(username);
-			if (uname) {
-				System.out.println("You have logged in"+username);
+			boolean upass = datastore.contains(userpass);
+			
+			System.out.println(uname);
+			if (uname  && upass) {
+				System.out.println("You have logged in"+" "+username);
 				
 			} else {
 				System.out.println("authication error:check your user name and password");
