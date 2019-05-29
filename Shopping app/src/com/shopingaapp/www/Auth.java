@@ -34,8 +34,8 @@ public class Auth {
 
 					// datastore = Arrays.asList(lines);
 					datastore.addAll(Arrays.asList(line.split("\\s*,\\s*")));
-					 System.out.println(datastore.get(1));
-					System.out.println(line);
+					// System.out.println(datastore.get(1));
+					//System.out.println(line);
 				
 
 			
