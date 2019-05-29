@@ -1,8 +1,8 @@
 package com.shopingaapp.www;
 
 public interface Customer {
-	public void Cart();
-	public void Nooftems();
+	public void IteamForCart();
+	public void NoOftems();
 	
 
 }
