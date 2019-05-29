@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Auth {
 
-	private String line ;
+	private String line;
 
 	public void optionver(int optiontype) {
 		Scanner inputScanner = new Scanner(System.in);
@@ -35,39 +35,65 @@ public class Auth {
 					// datastore = Arrays.asList(lines);
 					datastore.addAll(Arrays.asList(line.split("\\s*,\\s*")));
 					// System.out.println(datastore.get(1));
-					//System.out.println(line);
-				
+					// System.out.println(line);
 
-			
-				
-			}
-			boolean uname = datastore.contains(username);
-			boolean upass = datastore.contains(userpass);
-			
-			System.out.println(uname);
-			if (uname  && upass) {
-				System.out.println("You have logged in"+" "+username);
-				
-			} else {
-				System.out.println("authication error:check your user name and password");
+				}
+				boolean uname = datastore.contains(username);
+				boolean upass = datastore.contains(userpass);
 
-			}
-			}
-			
-		 catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();}
-			
-			
-		 
-			
-			
+				//System.out.println(uname);
+				if (uname && upass) {
+					System.out.println("You have logged in" + " " + username);
 
-		}
-		else {
+				} else {
+					System.out.println("authication error:check your user name and password");
+
+				}
+			}
+
+			catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		} else {
 			System.out.println("Admin login");
-			
+
+			System.out.println("Please enter user name:");
+			String Admin_name = inputScanner.nextLine();
+			System.out.println("Please enter your password:");
+			String Admin_pass = inputScanner.nextLine();
+
+			File customertxt = new File("admin.txt");
+
+			try {
+				FileReader customerReader = new FileReader(customertxt);
+				BufferedReader txtReader = new BufferedReader(customerReader);
+
+				ArrayList<String> datastore = new ArrayList<String>();
+
+				while ((line = txtReader.readLine()) != null) {
+
+					datastore.addAll(Arrays.asList(line.split("\\s*,\\s*")));
+
+				}
+				boolean Aname = datastore.contains(Admin_name);
+				boolean Apass = datastore.contains(Admin_pass);
+
+				if (Aname && Apass) {
+					System.out.println("You have logged in admin" + " " + Admin_name);
+
+				} else {
+					System.out.println("authication error:check your user name and password");
+
+				}
+			}
+
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+
 		}
-		
+
 	}
 }
