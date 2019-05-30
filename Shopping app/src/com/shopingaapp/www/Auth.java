@@ -44,7 +44,8 @@ public class Auth {
 
 				//System.out.println(uname);
 				if (uname && upass) {
-					System.out.println("You have logged in" + " " + username);
+					CustomerShopping customerobj = new CustomerShopping();
+					customerobj.IteamForCart();
 
 				} else {
 					System.out.println("authication error:check your user name and password");
