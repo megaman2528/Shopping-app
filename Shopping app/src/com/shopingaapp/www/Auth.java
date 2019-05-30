@@ -22,7 +22,7 @@ public class Auth {
 			System.out.println("Please enter your password:");
 			String userpass = inputScanner.nextLine();
 
-			File customertxt = new File("/home/freeze/git/Shoppingapp/Shopping app/customer.txt");
+			File customertxt = new File("customer.txt");
 
 			try {
 				FileReader customerReader = new FileReader(customertxt);
@@ -38,6 +38,7 @@ public class Auth {
 					// System.out.println(line);
 
 				}
+				txtReader.close();
 				boolean uname = datastore.contains(username);
 				boolean upass = datastore.contains(userpass);
 
@@ -54,7 +55,10 @@ public class Auth {
 			catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				
 			}
+			inputScanner.close();
+			
 
 		} else {
 			System.out.println("Admin login");
@@ -63,20 +67,24 @@ public class Auth {
 			String Admin_name = inputScanner.nextLine();
 			System.out.println("Please enter your password:");
 			String Admin_pass = inputScanner.nextLine();
+			inputScanner.close();
 
-			File customertxt = new File("admin.txt");
+			File admintxt = new File("admin.txt");
 
 			try {
-				FileReader customerReader = new FileReader(customertxt);
-				BufferedReader txtReader = new BufferedReader(customerReader);
+				FileReader adminReader = new FileReader(admintxt);
+				BufferedReader admintxtReader = new BufferedReader(adminReader);
 
 				ArrayList<String> datastore = new ArrayList<String>();
 
-				while ((line = txtReader.readLine()) != null) {
+				while ((line = admintxtReader.readLine()) != null) {
 
 					datastore.addAll(Arrays.asList(line.split("\\s*,\\s*")));
 
 				}
+				admintxtReader.close();
+				inputScanner.close();
+				
 				boolean Aname = datastore.contains(Admin_name);
 				boolean Apass = datastore.contains(Admin_pass);
 
@@ -92,6 +100,7 @@ public class Auth {
 			catch (IOException e) {
 				e.printStackTrace();
 			}
+			
 
 		}
 

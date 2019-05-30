@@ -1,1 +1,19 @@
-Fruits
+Fruits(per dozen)
+Apple 1$,Banana 2$,Grape 2$,Pineapple 4$,
+
+
+
+
+
+Vegetables(per kilo)
+Tomato 4$,Onion 5$,Ladyfinger 5$,Potato 6$
+
+
+
+
+
+Snacks(per pack)
+Lazys 2$,Nachos 10$,Noodles 15$
+
+
+
